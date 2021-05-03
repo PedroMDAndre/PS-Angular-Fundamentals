@@ -4,10 +4,12 @@ import { Component } from "@angular/core";
     selector: "events-list",
     template: `
     <div>
-        <h1>Upcoming Angular Events</h1>
+        <h1>Upcoming Angular 2 Events</h1>
         <hr />
-        <event-thumbnail [event]="event1"></event-thumbnail>
-    </div>`,
+        <event-thumbnail
+            #thumbnail
+            [event]="event1"></event-thumbnail>
+    </div>`
 })
 export class EventsListComponent {
     event1 = {
