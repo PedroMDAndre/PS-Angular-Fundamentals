@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { EventService } from "./share/event.service";
+import { EventService } from "./shared/event.service";
 import { ToastrService } from 'ngx-toastr';
 import { ToastrappService } from '../common/toastrapp.service';
 
