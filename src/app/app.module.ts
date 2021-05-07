@@ -2,21 +2,25 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
-import { EventsAppComponent } from './events-app.component';
-import { EventsListComponent } from './events/events-list.component';
-import { EventThumbnailComponent } from './events/event-thumbnail-component';
+import {
+  EventsListComponent,
+  EventThumbnailComponent,
+  EventService,
+  EventDetailsComponent,
+  CreateEventComponent,
+  EventRouteActivator,
+  EventListResolver,
+} from "./events/index";
 
-import { EventService } from './events/shared/event.service';
+
+import { EventsAppComponent } from './events-app.component';
 import { NavBarComponent } from './nav/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { ToastrappService } from './common/toastrapp.service';
-import { EventDetailsComponent } from './events/event-details/event-details.component';
 import { appRoutes } from "./routes";
-import { CreateEventComponent } from './events/create-event.components';
-import { Error404Component } from './errors/404.components';
-import { EventRouteActivator } from './events/event-details/event-route-activator.service';
-import { EventListResolver } from './events/events-list-resolver.service';
+import { Error404Component } from './errors/404.component';
+
 
 @NgModule({
   imports: [
@@ -50,7 +54,7 @@ import { EventListResolver } from './events/events-list-resolver.service';
 export class AppModule { }
 
 export function checkDirtyState(component: CreateEventComponent) {
-  if ( component.isDirty) {
+  if (component.isDirty) {
     return window.confirm("You have not saved this event, do you really want to cancel?")
   }
   return true;
