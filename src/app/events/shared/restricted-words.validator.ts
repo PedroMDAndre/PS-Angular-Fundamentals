@@ -10,6 +10,6 @@ export function restrictedWords(words: string[]) {
 
         return invalidWords && invalidWords.length > 0
             ? { 'restrictedWords': invalidWords.join(", ") }
-                : null
+            : null
     }
 }
