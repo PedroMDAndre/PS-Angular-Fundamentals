@@ -45,5 +45,9 @@ export class AuthService {
     updateCurrentUser(firstName: string, lastname: string) {
         this.currentUser.firstName = firstName;
         this.currentUser.lastName = lastname;
+
+        let options = { headers: new HttpHeaders({ "Content-Type": "application/json" }) };
+
+        return this.http.put(`/api/users/${this.currentUser.id}`, this.currentUser, options)
     }
 }
