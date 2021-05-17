@@ -31,7 +31,8 @@
                 class="form-control" placeholder="event price..." />
         </div>
 
-        <div ngModelGroup="location">
+
+        <div ngModelGroup="location" validateLocation>
             <div class="form-group">
                 <label for="address">Event Location:</label>
                 <input (ngModel)="newEvent?.location?.address" name="address" id="address" type="text"
@@ -49,11 +50,14 @@
             </div>
         </div>
 
+
         <div class="form-group">
             <label for="onlineUrl">Online Url:</label>
             <input (ngModel)="newEvent?.onlineUrl" name="onlineUrl" id="onlineUrl" type="text" class="form-control"
                 placeholder="Online Url..." />
         </div>
+
+
         <div class="form-group"
             [ngClass]="{'error': newEventForm.controls.imageUrl?.invalid && newEventForm.controls.imageUrl?.touched}">
             <label for="imageUrl">Image:</label>
