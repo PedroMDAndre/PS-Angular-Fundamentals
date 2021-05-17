@@ -32,7 +32,7 @@ export class SessionListComponent implements OnChanges {
         }
     }
 
-    userHasVoted(session: ISession){
+    userHasVoted(session: ISession): boolean{
         return this.voterService.userHasVoted(session, this.auth.currentUser.userName)
     }
 
