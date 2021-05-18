@@ -1,4 +1,4 @@
-import { DebugElement } from "@angular/core"
+import {  DebugElement, NO_ERRORS_SCHEMA } from "@angular/core"
 import { ComponentFixture, TestBed } from "@angular/core/testing"
 import { By } from "@angular/platform-browser"
 import { AuthService } from "src/app/user/auth.service"
@@ -14,18 +14,20 @@ describe("SessionListComponent", () => {
         element: HTMLElement,
         debugEl: DebugElement
 
-
     beforeEach(() => {
         mockAuthService = { isAuthenticated: () => true, currentUser: { userName: "Joe" } };
         mockVoterService = { userHasVoted: () => true };
         TestBed.configureTestingModule({
             declarations: [
                 SessionListComponent,
-                DurationPipe
+                DurationPipe,
             ],
             providers: [
                 { provide: AuthService, useValue: mockAuthService },
                 { provide: VoterService, useValue: mockVoterService },
+            ],
+            schemas: [
+                NO_ERRORS_SCHEMA
             ]
         });
         fixture = TestBed.createComponent(SessionListComponent);
