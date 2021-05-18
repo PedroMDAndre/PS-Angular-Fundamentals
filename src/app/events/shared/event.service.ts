@@ -20,7 +20,7 @@ export class EventService {
   }
 
   saveEvent(event: IEvent) {
-    let options = {
+    const options = {
       headers: new HttpHeaders({ "Content": "application/json" }),
     }
 

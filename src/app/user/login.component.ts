@@ -9,10 +9,10 @@ import { AuthService } from "./auth.service";
     `]
 })
 export class LoginComponent {
-    userName: string = "";
-    password: string = "";
-    mouseoverLogin: boolean = false;
-    loginInvalid: boolean = false;
+    userName = "";
+    password = "";
+    mouseoverLogin = false;
+    loginInvalid = false;
 
     constructor(private authService: AuthService,
         private route: Router) { }

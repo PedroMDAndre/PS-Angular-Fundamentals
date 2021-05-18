@@ -21,7 +21,7 @@ export class UpvoteComponent {
         this.iconColor = val ? "red" : "white";
     }
     @Output() vote = new EventEmitter();
-    iconColor: string = "white";
+    iconColor = "white";
 
     onClick() {
         this.vote.emit({});

@@ -4,7 +4,7 @@ export function restrictedWords(words: string[]): ValidatorFn {
     return (control: AbstractControl): { [key: string]: any } | null => {
         if (!words) { return null; }
 
-        var invalidWords = words
+        const invalidWords = words
             .map(word => control.value.includes(word) ? word : null)
             .filter(word => word != null);
 

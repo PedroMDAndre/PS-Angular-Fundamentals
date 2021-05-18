@@ -26,11 +26,11 @@ import { appRoutes } from './routes'
 import { Error404Component } from './errors/404.component'
 import { AuthService } from './user/auth.service'
 
-let a: any = 'toastr';
-let b: any = '$';
+const a: any = 'toastr';
+const b: any = '$';
 
-let toastr:Toastr | Window = window[a];
-let jQuery:any | Window = window[b];
+const toastr:Toastr | Window = window[a];
+const jQuery:any | Window = window[b];
 
 @NgModule({
   imports: [
